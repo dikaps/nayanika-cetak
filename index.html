@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&display=swap" rel="stylesheet" />
+
+    <link rel="shortcut icon" href="./logo.png" type="image/x-icon" />
+
+    <title>Naya Nika Boutique</title>
+
+    <style>
+      h2 {
+        font-family: "Dancing Script", cursive;
+      }
+
+      @media print {
+        .inputForm,
+        .btn,
+        .title,
+        .subtitle,
+        hr {
+          display: none;
+          margin: 0;
+        }
+        .container .mt-5 {
+          display: none;
+          margin: 0;
+        }
+        #telp {
+          margin-left: 1rem;
+        }
+
+        main {
+          margin-top: 0;
+        }
+
+        .watermark {
+          top: 50%;
+          width: 18rem;
+        }
+
+        .img-header {
+          width: 10rem;
+        }
+
+        label {
+          font-size: 0.9rem !important;
+        }
+
+        .today {
+          display: block !important;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <section class="mt-5">
+        <div class="d-flex justify-content-between">
+          <h2 class="title">Nayanika Boutique</h2>
+          <a href="https://andikaps.github.io/" target="_blank" class="link-primary">@dIkaps</a>
+        </div>
+        <span class="subtitle">Cetak Alamat Paket</span>
+      </section>
+
+      <section class="mt-5 inputForm">
+        <form action="#">
+          <div class="row mb-3">
+            <label for="nama" class="col-2 col-form-label">Nama</label>
+            <div class="col-10">
+              <input type="text" class="form-control" id="nama" name="input_nama" />
+            </div>
+          </div>
+
+          <div class="row mb-3">
+            <label for="alamat" class="col-2 col-form-label">Alamat</label>
+            <div class="col-10">
+              <textarea name="input_alamat" id="alamat" cols="30" rows="5" class="form-control text-capitalize"></textarea>
+            </div>
+          </div>
+
+          <div class="row mb-3">
+            <label for="notel" class="col-2 col-form-label">No. Telpon</label>
+            <div class="col-10">
+              <input type="number" class="form-control" id="notel" name="input_notel" />
+            </div>
+          </div>
+
+          <div class="row mb-3">
+            <label for="berat" class="col-2 col-form-label">Berat</label>
+            <div class="col-10">
+              <input type="number" class="form-control" id="berat" name="input_berat" />
+            </div>
+          </div>
+
+          <div class="row mb-3">
+            <label for="notel" class="col-2 col-form-label">Ongkir</label>
+            <div class="col-10">
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="ongkir" id="dfod" value="dfod" />
+                <label class="form-check-label" for="dfod">DFOD</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="ongkir" id="bayar" value="sbo" />
+                <label class="form-check-label" for="bayar">Sudah Bayar Ongkir</label>
+              </div>
+            </div>
+          </div>
+        </form>
+      </section>
+      <hr class="my-5" />
+
+      <main class="mb-3">
+        <div class="d-flex justify-content-end">
+          <button class="btn btn-primary my-3" id="print"><i class="bi bi-printer mx-2"></i> Print</button>
+        </div>
+        <div class="py-2 px-5 rounded position-relative">
+          <img src="" alt="dfod" class="position-absolute img-ongkir d-none" style="top: 5%; right: 5%; z-index: -1; opacity: 0.8" width="100" />
+          <img src="./logo.png" alt="" class="position-absolute watermark" style="top: 30%; left: 30%; z-index: -1; opacity: 0.1" width="500" />
+          <h1 class="position-absolute d-none berat" style="top: 35%; right: 6%; z-index: -1"><span class="fw-bold" style="opacity: 0.7" id="display_berat"></span><span class="fs-4">kg</span></h1>
+          <div class="d-flex justify-content-center">
+            <img src="./logo.png" alt="image" width="255" class="mb-3 img-header" />
+          </div>
+          <p class="position-absolute fw-light today d-none" style="top: 5%; left: 5%; z-index: -1"></p>
+          <form action="#">
+            <div class="row">
+              <label for="nama" class="col-2">Nama</label>
+              <div class="col-10">
+                <div class="d-flex align-items-center">
+                  <span>:</span>
+                  <input type="text" class="form-control mx-2 border-0 bg-transparent" id="nama" name="display_nama" />
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <label for="nama" class="col-2 col-form-label">Alamat</label>
+              <div class="col-10">
+                <div class="d-flex align-items-start">
+                  <span class="pt-1">:</span>
+                  <textarea name="display_alamat" class="form-control border-0 bg-transparent" id="" rows="3"> </textarea>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <label for="nama" class="col-2 col-form-label dp-notel">Telepon</label>
+              <div class="col-10">
+                <div class="d-flex align-items-center">
+                  <span>:</span>
+                  <input type="number" class="mx-2 border-0 bg-transparent" id="nama" name="display_notel" />
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <label for="nama" class="col-2 col-form-label">Keterangan</label>
+              <div class="col-10">
+                <div class="d-flex align-items-center">
+                  <span>:</span>
+                  <input type="text" class="mx-2 border-0" id="nama" name="notel" value="Pakaian" />
+                </div>
+              </div>
+            </div>
+
+            <div class="d-flex justify-content-center align-items-center"><i class="bi bi-whatsapp fs-4"></i><span class="mx-3 fs-5" id="telp">0822 5758 5960</span></div>
+
+            <div class="d-flex justify-content-center align-items-center">
+              <div class="d-flex justify-content-center align-items-center">
+                <i class="bi bi-instagram fs-4"></i>
+                <span class="mx-2 fs-5">nayanika_boutique</span>
+              </div>
+              <span class="fs-4 mx-3">/</span>
+              <div class="d-flex justify-content-center align-items-center">
+                <i class="bi bi-facebook fs-4"></i>
+                <span class="mx-2 fs-5">Nayanika ByVinahijab</span>
+              </div>
+            </div>
+          </form>
+        </div>
+      </main>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./js/main.js"></script>
+  </body>
+</html>
