@@ -1,0 +1,70 @@
+/* 
+|=========================
+| Nayanika and Vina Hijab : 2021
+| Author : Andika Permana Sidiq
+| github : https://github.com/andikaps
+|=========================
+*/
+h2 {
+  font-family: "Dancing Script", cursive;
+}
+
+@media print {
+  .inputForm,
+  .btn,
+  .title,
+  .subtitle,
+  a,
+  hr {
+    display: none !important;
+    margin: 0;
+  }
+  .container .mt-5 {
+    display: none;
+    margin: 0;
+  }
+  #telp {
+    margin-left: 1rem;
+  }
+
+  main {
+    margin-top: 0;
+  }
+
+  .watermark {
+    top: 50%;
+    width: 18rem;
+  }
+
+  .img-header {
+    width: 10rem;
+  }
+
+  label {
+    font-size: 0.9rem !important;
+  }
+
+  .today {
+    display: block !important;
+  }
+
+  #area-print {
+    display: block !important;
+  }
+}
+
+.animate {
+  /* animation: animate .5s timing-function delay iteration-count direction fill-mode; */
+  animation: animate 3s linear infinite;
+}
+
+@keyframes animate {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-5px);
+  }
+}
