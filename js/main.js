@@ -59,7 +59,7 @@
   const btnPrint = document.querySelector("#print");
   if (btnPrint) {
     btnPrint.onclick = () => {
-      document.querySelector(".today").innerHTML = moment().format("d MMMM YYYY");
+      document.querySelector(".today").innerHTML = moment().format("D MMMM YYYY");
       window.print();
     };
   }
