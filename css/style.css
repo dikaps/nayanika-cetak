@@ -14,7 +14,9 @@ h2 {
   .btn,
   .title,
   .subtitle,
+  .input_data,
   a,
+  header,
   hr {
     display: none !important;
     margin: 0;
